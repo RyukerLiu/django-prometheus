@@ -1,13 +1,15 @@
-# Alpine Django
+# Django Prometheus
 
-Dockerfile with python in Alpine OS environment
-
-Docker-compose file with django server
+Docker-composed django and prometheus services
 
 ```
 docker-compose up
 ```
 
-`ENV PYTHONUNBUFFERED=1` in the Dockerfile is important
+http://localhost:9090/graph
 
-Or the container log will be weird
+http://localhost:9090/graph?g0.range_input=1h&g0.stacked=1&g0.expr=django_http_requests_total_by_method_total&g0.tab=0
+
+https://docs.timescale.com/latest/tutorials/tutorial-howto-monitor-django-prometheus
+
+https://github.com/korfuri/django-prometheus
